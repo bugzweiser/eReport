@@ -34,7 +34,7 @@ header img {
     height: auto;
 }
 .logoplot {
-	border-radius: 5px;
+    border-radius: 5px;
     background-color: white;
     padding: 5px;
 }
@@ -46,11 +46,13 @@ header img {
 
 }
 .vid {
+    margin: 0 2% 0 0;
     color: white;
     text-shadow: 2px 2px 4px #000000;
     font-size: 22px;
 }
 .did {
+    margin: 0 2% 0 0;
     color: white;
     text-shadow: 2px 2px 4px #000000;
     font-size: 22px;
@@ -67,7 +69,7 @@ Hyundai Entry
     border-bottom: 1px solid black;
     border-radius: 5px;
     width: 340px;
-    padding: 2px;
+    padding: 3px;
     margin: 1% 5% 3%;
     background-image: linear-gradient(white, lightblue, rgb(102, 156, 226));
     box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2), 0 6px 5px 0 rgba(0,0,0,0.19);
@@ -120,14 +122,14 @@ Genesis Entry
     border-bottom: 1px solid black;
     border-radius: 5px;
     width: 340px;
-    padding: 2px;
+    padding: 3px;
     margin: 1% 5% 3%;
     background-image: linear-gradient(white, tan, brown);
     box-shadow: 0 8px 6px 0 rgba(0,0,0,0.2), 0 6px 5px 0 rgba(0,0,0,0.19);
 }
 .box3 {
     text-align: center;
-    margin: 2px 15px 0;
+    margin: 2px 5px 0;
     background: white;
     width: 188px;
     padding: 2px;
