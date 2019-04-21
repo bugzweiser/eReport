@@ -68,7 +68,7 @@ Hyundai Entry
     border-radius: 5px;
     width: 340px;
     padding: 2px;
-    margin: 1% 1% 2%;
+    margin: 1% 5% 3%;
     background-image: linear-gradient(white, lightblue, rgb(102, 156, 226));
     box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2), 0 6px 5px 0 rgba(0,0,0,0.19);
 }
@@ -76,7 +76,7 @@ Hyundai Entry
 .box1 {
 
     text-align: center;
-    margin: 5px 17px 5px;
+    margin: 5px 5px 5px;
     background: white;
     width: 100px;
     padding: 2px;
@@ -87,7 +87,7 @@ Hyundai Entry
 }
 .box2 {
     text-align: center;
-    margin: 0 15px 5px;
+    margin: 0 5px 5px;
     background: white;
     width: 188px;
     padding: 2px;
@@ -101,7 +101,7 @@ Hyundai Entry
     border: 1px solid rgb(101, 101, 248);
     border-bottom: 1px solid black;
     border-radius: .25rem;
-    padding: 3px;
+    padding: 2px;
     font-size: 15px;
     font-style: italic;
     font-weight: bold;
@@ -122,13 +122,13 @@ Genesis Entry
     border-radius: 5px;
     width: 340px;
     padding: 2px;
-    margin: 1% 1% 2%;
+    margin: 1% 5% 3%;
     background-image: linear-gradient(white, tan, brown);
     box-shadow: 0 8px 6px 0 rgba(0,0,0,0.2), 0 6px 5px 0 rgba(0,0,0,0.19);
 }
 .box3 {
     text-align: center;
-    margin: 2px 15px 0;
+    margin: 2px 5px 0;
     background: white;
     width: 188px;
     padding: 2px;
@@ -142,7 +142,7 @@ Genesis Entry
     border: 1px solid #8B4513;
     border-bottom: 1px solid black;
     border-radius: .25rem;
-    padding: 3px;
+    padding: 2px;
     font-size: 15px;
     font-style: italic;
     font-weight: bold;
