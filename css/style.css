@@ -74,9 +74,8 @@ Hyundai Entry
 }
 
 .box1 {
-
     text-align: center;
-    margin: 5px 5px 5px;
+    margin: 5px 15px 5px;
     background: white;
     width: 100px;
     padding: 2px;
@@ -128,7 +127,7 @@ Genesis Entry
 }
 .box3 {
     text-align: center;
-    margin: 2px 5px 0;
+    margin: 2px 15px 0;
     background: white;
     width: 188px;
     padding: 2px;
