@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>FSE eReport Portal</title>
+    <link rel="icon"  href="favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/style_b.css">
+
+  </head>
+  <body>
+    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
+    <div id="dialogWrap">
+        <div id="dialogWrapCell">
+            <div id="mainDialog">
+                <div id="dialogText">This Portal is Password Protected.</div>
+                <div id="passArea">
+                    <p id="passwordPrompt">Please Enter Password</p>
+                    <input id="pass" type="password" name="pass">
+                    <div>
+                        <span id="messageWrapper">
+                            <span id="invalidPass" class="notifyText">Sorry, please try again.</span>
+                            <span id="success" class="notifyText">Welcome</span>
+                            &nbsp;
+                        </span>
+                        <button id="submitPass" type="button">Submit</button>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/pbkdf2.js"></script>
+    <script>
+        /*! srcdoc-polyfill - v0.1.1 - 2013-03-01
+        * http://github.com/jugglinmike/srcdoc-polyfill/
+        * Copyright (c) 2013 Mike Pennisi; Licensed MIT */
+        (function( window, document, undefined ) {
+	
+	        var idx, iframes;
+	        var _srcDoc = window.srcDoc;
+	        var isCompliant = !!("srcdoc" in document.createElement("iframe"));
+	        var implementations = {
+		        compliant: function( iframe, content ) {
+
+			        if (content) {
+				        iframe.setAttribute("srcdoc", content);
+			        }
+		        },
+		        legacy: function( iframe, content ) {
+
+			        var jsUrl;
+
+			        if (!iframe || !iframe.getAttribute) {
+				        return;
+			        }
+
+			        if (!content) {
+				        content = iframe.getAttribute("srcdoc");
+			        } else {
+				        iframe.setAttribute("srcdoc", content);
+			        }
+
+			        if (content) {
+				        // The value returned by a script-targeted URL will be used as
+				        // the iFrame's content. Create such a URL which returns the
+				        // iFrame element's `srcdoc` attribute.
+				        jsUrl = "javascript: window.frameElement.getAttribute('srcdoc');";
+
+				        iframe.setAttribute("src", jsUrl);
+
+				        // Explicitly set the iFrame's window.location for
+				        // compatability with IE9, which does not react to changes in
+				        // the `src` attribute when it is a `javascript:` URL, for
+				        // some reason
+				        if (iframe.contentWindow) {
+					        iframe.contentWindow.location = jsUrl;
+				        }
+			        }
+		        }
+	        };
+	        var srcDoc = window.srcDoc = {
+		        // Assume the best
+		        set: implementations.compliant,
+		        noConflict: function() {
+			        window.srcDoc = _srcDoc;
+			        return srcDoc;
+		        }
+	        };
+
+	        // If the browser supports srcdoc, no shimming is necessary
+	        if (isCompliant) {
+		        return;
+	        }
+
+	        srcDoc.set = implementations.legacy;
+
+	        // Automatically shim any iframes already present in the document
+	        iframes = document.getElementsByTagName("iframe");
+	        idx = iframes.length;
+
+	        while (idx--) {
+		        srcDoc.set( iframes[idx] );
+	        }
+
+        }( this, this.document ));
+    </script>
+    <script>
+        var pl = {"salt":"BQZ7vQL/BkE5GCR994ypmFxqVyWu4twKZruzKIRDDpg=","iv":"qv/SkNzuNeQQnmjNdWN5cg==","data":"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"};
+        
+        var submitPass = document.getElementById('submitPass');
+        var passEl = document.getElementById('pass');
+        var invalidPassEl = document.getElementById('invalidPass');
+        var successEl = document.getElementById('success');
+        var contentFrame = document.getElementById('contentFrame');
+        
+        if (pl === "") {
+            submitPass.disabled = true;
+            passEl.disabled = true;
+            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
+        }
+        
+        function doSubmit(evt) {
+            try {
+                var decrypted = decryptFile(CryptoJS.enc.Base64.parse(pl.data), passEl.value, CryptoJS.enc.Base64.parse(pl.salt), CryptoJS.enc.Base64.parse(pl.iv));
+                if (decrypted === "") throw "No data returned";
+                
+                // Set default iframe link targets to _top so all links break out of the iframe
+                decrypted = decrypted.replace("<head>", "<head><base href=\".\" target=\"_top\">");
+                
+                srcDoc.set(contentFrame, decrypted);
+                
+                successEl.style.display = "inline";
+                passEl.disabled = true;
+                submitPass.disabled = true;
+                setTimeout(function() {
+                    dialogWrap.style.display = "none";
+                }, 1000);
+            } catch (e) {
+                invalidPassEl.style.display = "inline";
+                passEl.value = "";
+            }
+        }
+        
+        submitPass.onclick = doSubmit;
+        passEl.onkeypress = function(e){
+            if (!e) e = window.event;
+            var keyCode = e.keyCode || e.which;
+            invalidPassEl.style.display = "none";
+            if (keyCode == '13'){
+              // Enter pressed
+              doSubmit();
+              return false;
+            }
+        }
+        
+        function decryptFile(contents, password, salt, iv) {
+            var _cp = CryptoJS.lib.CipherParams.create({
+                ciphertext: contents
+            });
+            var key = CryptoJS.PBKDF2(password, salt, { keySize: 256/32, iterations: 100 });
+            var decrypted = CryptoJS.AES.decrypt(_cp, key, {iv: iv});
+            
+            return decrypted.toString(CryptoJS.enc.Utf8);
+        }
+    </script>
+  </body>
+</html>
