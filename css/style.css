@@ -25,7 +25,7 @@ header img {
     border-bottom: 2px solid black;
     border-radius: 5px;
     background: white;
-    width: 340px;
+    width: 360px;
     margin: 10% auto 3% auto; /* 5% from the top, 15% from the bottom and centered */
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.692);  
 }
@@ -68,7 +68,7 @@ Hyundai Entry
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     border-radius: 5px;
-    width: 300px;
+    width: 320px;
     padding: 3px;
     margin: 1% 5% 3%;
     background-image: linear-gradient(white, lightblue, rgb(102, 156, 226));
@@ -77,7 +77,7 @@ Hyundai Entry
 
 .box1 {
     text-align: center;
-    margin: 5px 20px 5px;
+    margin: 5px 10px 5px;
     background: white;
     width: 100px;
     padding: 2px;
@@ -121,7 +121,7 @@ Genesis Entry
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     border-radius: 5px;
-    width: 300px;
+    width: 320px;
     padding: 3px;
     margin: 1% 5% 3%;
     background-image: linear-gradient(white, tan, brown);
