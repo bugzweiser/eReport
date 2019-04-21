@@ -67,8 +67,8 @@ Hyundai Entry
     border-bottom: 1px solid black;
     border-radius: 5px;
     width: 240px;
-    padding: 3px;
-    margin: 1% 5% 3%;
+    padding: 10px;
+    margin: 1% 10% 3%;
     background-image: linear-gradient(white, lightblue, rgb(102, 156, 226));
     box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2), 0 6px 5px 0 rgba(0,0,0,0.19);
 }
@@ -120,8 +120,8 @@ Genesis Entry
     border-bottom: 1px solid black;
     border-radius: 5px;
     width: 240px;
-    padding: 3px;
-    margin: 1% 5% 3%;
+    padding: 10px;
+    margin: 1% 10% 3%;
     background-image: linear-gradient(white, tan, brown);
     box-shadow: 0 8px 6px 0 rgba(0,0,0,0.2), 0 6px 5px 0 rgba(0,0,0,0.19);
 }
