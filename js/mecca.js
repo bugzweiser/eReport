@@ -1,13 +1,13 @@
 
     //Dealer Lookup
     function getHDealer() {
-        window.open("_blank").location.href = "http://gds.hyundaitechinfo.com/eReport/diaglist.aspx?uid=GDS&cpcode=B28AA" + document.getElementById("dealerH").value;
+        window.open("_blank").location.href = "https://gds.hyundaitechinfo.com:447/eReport/diaglist.aspx?&cpcode=B28AA" + document.getElementById("dealerH").value;
         return false;
     }
 
     //VIN Lookup
     function getHVin() {
-        window.open("_blank").location.href = "http://gds.hyundaitechinfo.com/eReport/diaglist.aspx?uid=GDS&cpcode=B28AA&vin=" + document.getElementById("vinH").value;
+        window.open("_blank").location.href = "https://gds.hyundaitechinfo.com:447/eReport/diaglist.aspx?cpcode=B28AA&vin=" + document.getElementById("vinH").value;
         return false;
     }
     //Genesis Dealer Lookup
