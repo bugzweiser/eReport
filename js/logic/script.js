@@ -29,6 +29,12 @@ $("input").on("click keyup", function(e) {
             break;
         case "keyup":
             $("#" + id).val($(this).val().toUpperCase());
+            var key = e.keyCode;
+            key = (key === 9 || key === 13);
+            var val = this.value;
+            if (key) {
+                dataSbmt({ val: val, id: id });
+            }
             break;
     }
     $('#id').keyup(function() {
@@ -46,35 +52,51 @@ $("#submit").unbind().click(function(e) {
     var qry;
     var dCode = $("#dCode").val();
     var vin = $("#vin").val();
+
     if (dCode != "") {
-        var dCdLtrTst = dCode.slice(0, 2);
-        var dCdNbrTst = dCode.slice(2, 5);
-        var dCdTst1 = isaLetter.test(dCdLtrTst);
-        if (dCdLtrTst === "CA") {
-            dCdNbrTst = parseInt(dCode.slice(2, 4));
-        }
-        var dCdTst2 = isaNumber.test(dCdNbrTst);
-        var dCdTst = (dCdTst1 && dCdTst2);
-        if (dCdTst) {
-            qry = { "dCode": dCode }
-        } else {
-            alert("improper dealer code");
-            $("#dCode").val("");
-            return
-        }
+        qry = { val: dCode, id: "dCode" }
     } else {
-        var vinLow = 6;
-        var vinHigh = 17;
-        var validVin = (vin.length >= vinLow && vin.length <= vinHigh);
-        if (!validVin) {
-            alert("please enter a valid VIN");
-            $("#vin").val("");
-            return;
-        }
-        qry = { "vin": vin }
+        qry = { val: vin, id: "vin" }
     };
-    getData(qry)
+    dataSbmt(qry);
 });
+
+function dataSbmt(params) {
+    var val = params.val;
+    var id = params.id
+    switch (id) {
+        case "dCode":
+            var dCdLtrTst = val.slice(0, 2);
+            var dCdNbrTst = val.slice(2, 5);
+            var dCdTst1 = isaLetter.test(dCdLtrTst);
+            if (dCdLtrTst === "CA") {
+                dCdNbrTst = parseInt(val.slice(2, 4));
+            }
+            var dCdTst2 = isaNumber.test(dCdNbrTst);
+            var dCdTst = (dCdTst1 && dCdTst2);
+            if (dCdTst) {
+                qry = { "dCode": val }
+            } else {
+                alertModal("Dealer Code<br>Not Valid");
+                $("#dCode").val("");
+                return
+            }
+            break;
+
+        case "vin":
+            var vinLow = 6;
+            var vinHigh = 17;
+            var validVin = (val.length >= vinLow && val.length <= vinHigh);
+            if (!validVin) {
+                alertModal("Please Enter a Valid VIN");
+                $("#vin").val("");
+                return;
+            }
+            qry = { "vin": val }
+            break;
+    }
+    getData(qry)
+}
 
 function getData(params) {
     var val;

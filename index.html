@@ -35,24 +35,40 @@
                                 <img src="img/logoBlue.jpg" alt="logoBlue.jpg" style="width: 30%;">
                             </div>
                         </div>
-                        <div class="form-row border border-dark rounded dropShadow bgLtGrey p-3 mb-3">
-                            <div class="col-xl-4 mb-2">
-                                <label class="bold" for="dCode">Dealer Code</label>
-                                <input type="text" class="form-control border border-dark inpHoverBdr" id="dCode" name='dCode' placeholder="xx123" maxlength="5" autocomplete="off">
+                        <div class="border border-dark rounded dropShadow bgLtGrey p-3">
+                            <div class="form-row">
+                                <div class="col-xl-4 mb-2">
+                                    <label class="bold d-flex justify-content-center" for="dCode">Dealer Code</label>
+                                    <input type="text" class="inpFld form-control border border-dark inpHoverBdr" id="dCode" name='dCode' placeholder="xx123" maxlength="5" title="enter dealer code" autocomplete="off">
+                                </div>
+                                <div class="col-xl-8 mb-1">
+                                    <label class="bold d-flex justify-content-center" for="vin">VIN</label>
+                                    <input type="text" class="inpFld form-control border border-dark inpHoverBdr" id="vin" name='vin' placeholder='enter VIN (all, 6, or 8)' maxlength="17" title="enter VIN" autocomplete="off">
+                                </div>
                             </div>
-                            <div class="col-xl-8 mb-2">
-                                <label class="bold" for="vin">VIN</label>
-                                <input type="text" class="form-control border border-dark inpHoverBdr" id="vin" name='vin' placeholder='enter VIN (all, 6, or 8)' maxlength="17" autocomplete="off">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <button class="btn btn-primary btn-block bold dropShadow" type="submit" id="submit" title="click to search">Submit</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="row mb-1">
-                            <div class="col-xl-12">
-                                <button class="btn btn-primary btn-block bold dropShadow" type="submit" id="submit">Submit</button>
+                        <div class="row d-flex justify-content-center mb-3">
+                            <small class="italic bold">Enter dealer code or VIN (GMA or HMA)</small>
+                        </div>
+                        <div class="border border-dark rounded bgLtGrey dropShadow p-1">
+                            <div class="row d-flex justify-content-center">
+                                <small class="text-danger italic bold">***Enable Chrome U/A Spoofer for operation if on PC***</small>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <small class="text-danger italic bold">Choose Android - KitKat from dropdown menu</small>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <small class="text-danger italic bold">Download Link: 
+                                    <a href="https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg?hl=en-US" target="_blank" title="click to download User-Agent">User-Agent</a>
+                                </small>
                             </div>
                         </div>
-                        <div class="row d-flex justify-content-center">
-                            <small class="text-danger italic bold">enter dealer code or VIN (GMA or HMA)</small>
-                        </div>
+
                         <!-- </form> -->
                     </div>
                 </div>
