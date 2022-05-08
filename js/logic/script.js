@@ -13,7 +13,7 @@ $(document).on("mouseenter", ".radHvr", function() {
     };
 });
 
-$("input").on("click keyup focus blur", function(e) {
+$("input").on("click keyup focus", function(e) {
     var id = this.id;
     var type = e.type;
     switch (type) {
@@ -37,9 +37,6 @@ $("input").on("click keyup focus blur", function(e) {
             }
             break;
         case "focus":
-            $("#" + id).val(" ");
-            break;
-        case "blur":
             $("#" + id).val("");
             break;
     }
